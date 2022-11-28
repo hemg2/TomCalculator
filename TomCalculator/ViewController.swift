@@ -19,7 +19,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var numberOutputLabel: UILabel!
     
-    var displayNumbber = ""
+    var displayNumber = ""
     var firstOperand = ""
     var secondOperand = ""
     var result = ""
@@ -30,17 +30,19 @@ class ViewController: UIViewController {
     }
 
     
+   
     @IBAction func tapNumberButton(_ sender: UIButton) {
         guard let numberValue = sender.title(for: .normal) else { return }
-        if self.displayNumbber.count < 9 {
-            self.displayNumbber += numberValue
-            self.numberOutputLabel.text = self.displayNumbber
-            print("asdsad")
-        }
+            if self.displayNumber.count < 9 {
+                self.displayNumber += numberValue
+                self.numberOutputLabel.text = self.displayNumber
+            }
     }
     
+   
+    
     @IBAction func tapClearButton(_ sender: UIButton) {
-        self.displayNumbber = ""
+        self.displayNumber = ""
         self.firstOperand = ""
         self.secondOperand = ""
         self.result = ""
@@ -49,9 +51,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func tapDotButton(_ sender: UIButton) {
-        if self.displayNumbber.count < 8, !self.displayNumbber.contains(".") {
+//        if self.displayNumber.count < 8, !self.displayNumber.contains(".") {
 //            self.displayNumbber += self.displayNumbber.isEmpty ? "0"÷
-        }
+//        }
     }
     
     
