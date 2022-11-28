@@ -7,13 +7,67 @@
 
 import UIKit
 
+enum Operation {
+    case Add
+    case Subtract
+    case Divide
+    case Multiply
+    case unknow
+}
+
 class ViewController: UIViewController {
 
+    @IBOutlet weak var numberOutputLabel: UILabel!
+    
+    var displayNumbber = ""
+    var firstOperand = ""
+    var secondOperand = ""
+    var result = ""
+    var currentOperation: Operation = .unknow
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
-
+    
+    @IBAction func tapNumberButton(_ sender: UIButton) {
+        guard let numberValue = sender.title(for: .normal) else { return }
+        if self.displayNumbber.count < 9 {
+            self.displayNumbber += numberValue
+            self.numberOutputLabel.text = self.displayNumbber
+            print("asdsad")
+        }
+    }
+    
+    @IBAction func tapClearButton(_ sender: UIButton) {
+        self.displayNumbber = ""
+        self.firstOperand = ""
+        self.secondOperand = ""
+        self.result = ""
+        self.currentOperation = .unknow
+        self.numberOutputLabel.text = "0"
+    }
+    
+    @IBAction func tapDotButton(_ sender: UIButton) {
+        if self.displayNumbber.count < 8, !self.displayNumbber.contains(".") {
+//            self.displayNumbber += self.displayNumbber.isEmpty ? "0"÷
+        }
+    }
+    
+    
+    @IBAction func tapDivideButton(_ sender: UIButton) {
+    }
+    
+    @IBAction func tapMultiplyButton(_ sender: UIButton) {
+    }
+    
+    
+    @IBAction func tapSubtractButton(_ sender: UIButton) {
+    }
+    
+    @IBAction func tapAddButton(_ sender: UIButton) {
+    }
+    
+    
 }
 
